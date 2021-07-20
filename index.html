@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div style="color:blue">
+        <form action="{{ url_for('predict')}}" method="post">
+            <h2>Predictive analysis</h2>
+            <h3>what is Applicant Income</h3>
+            <input id="first" name="ApplicantIncome" type="number ">
+            <h3>What is the co applicant income</h3><br><input id="second" name="CoApplicantIncome" required="required">
+            <h3>How Much loan is required?</h3><input id="third" name="LoanAmount" required="required">
+            <h3>for how much time you required loan (in days) ?</h3><br><input id="fourth" name="Loan_Amount_Term" required="required">
+            <h3>What Is the Credit History?</h3><br><select name="Credit_History" id="credit" required="required">
+                <option value="Credit_History_Good">Credit_History_Good</option>
+                <option value="credit_history_Bad">Credit_History_Bad</option>
+            </select>
+            <h3>Are you A married</h3><br><select name="Yes_Married" id="married" required="required">
+                <option value="Yes_Married">Yes_Married</option>
+                <option value="Not_Married">Not_Married</option>
+            </select>
+            <h3>how many childern you have?</h3><br><select name="Children" id="childern" required="required">
+                <option value="zero">zero</option>
+                <option value="one">one</option>
+                <option value="two">two</option>
+                <option value="three_plus">three_plus</option>
+            </select>
+            <h3>are you graduated</h3><br><select name="Graduated" id="graduated" required="required">
+            <option value="NotGraduated">NotGraduated</option>
+            <option value="YesGraduated">YesGraduated</option>
+            </select>
+            
+            <h3>are you employed ?</h3><select name="Employed" id="Employed" required="required">
+            <option value="Yes_Employed">Yes_Employed</option>
+            <option value="Not_Employed">Not_Employed</option>
+            </select>
+            <h3>in what kind of area you are living</h3><select name="Living_area" id="living" required="required">
+            <option value="urban">urban</option>
+            <option value="semiurban">semiurban</option>
+            <option value="rural">rural</option>
+            </select>
+            <h3> your gender?</h3><select name="Gender" id="gender" required="required">
+            <option value="male">male</option>
+            <option value="female">female</option>
+            </select>    
+            <br><br><button id="sub" type="submit ">Calculate the Selling Price</button>
+            <br>
+
+
+
+
+        </form>
+
+
+
+        <br><br><h3>{{ prediction_text }}</h3>
+       
+    </div>
+</body>
+
+</html>
